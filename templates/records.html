@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>Records</h4>
+    <table>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PINCODE</th>
+
+        {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+      <h5><a href = "/enter-new/">enter new</a></h5>
+</body>
+</html>
