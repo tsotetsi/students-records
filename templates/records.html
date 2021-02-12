@@ -7,21 +7,22 @@
 <body>
     <h4>Records</h4>
     <table>
+        <th>ID</th>
         <th>Name</th>
         <th>Address</th>
         <th>City</th>
-        <th>PINCODE</th>
-
+        <th>Pin Code</th>
         {% for record in records %}
             <tr>
                 <td>{{ record[0] }}</td>
                 <td>{{ record[1] }}</td>
                 <td>{{ record[2] }}</td>
                 <td>{{ record[3] }}</td>
+                <td>{{ record[4] }}</td>
             </tr>
         {% endfor %}
     </table>
-      <h5><a href ="/enter-new/">enter new</a></h5>
-      <h5><a href="/show-records/">show records</a></h5>
+      <h5><a href ="/registration-form/">show reg's page</a></h5>
+      <h5><a href="/show-records/">show records page</a></h5>
 </body>
 </html>
