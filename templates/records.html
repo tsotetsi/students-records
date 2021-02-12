@@ -12,6 +12,7 @@
         <th>Address</th>
         <th>City</th>
         <th>Pin Code</th>
+        <th>Delete</th>
         {% for record in records %}
             <tr>
                 <td>{{ record[0] }}</td>
@@ -19,6 +20,7 @@
                 <td>{{ record[2] }}</td>
                 <td>{{ record[3] }}</td>
                 <td>{{ record[4] }}</td>
+                <td><a href="/delete-student/{{ record[0] }}">Delete</a> </td>
             </tr>
         {% endfor %}
     </table>

@@ -61,3 +61,21 @@ def show_records():
     finally:
         con.close()
         return render_template('records.html', records=records)
+
+
+@app.route('/delete-student/<int:student_id>/', methods=["GET"])
+def delete_student(student_id):
+
+    msg = None
+    try:
+        with sqlite3.connect('database.db') as con:
+            cur = con.cursor()
+            cur.execute("DELETE FROM student WHERE id=" + str(student_id))
+            con.commit()
+            msg = "A record was deleted successfully from the database."
+    except Exception as e:
+        con.rollback()
+        msg = "Error occurred when deleting a student in the database: " + str(e)
+    finally:
+        con.close()
+        return render_template('delete-success.html', msg=msg)
